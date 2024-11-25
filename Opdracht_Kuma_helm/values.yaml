@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  hosts:
+    - host: kumahelm.cloudcomp-10.ucll.cloud
+      paths:
+        - path: "/"
+          pathType: Prefix
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+  tls:
+    - secretName: kumahelm-tls
+      hosts:
+        - kumahelm.cloudcomp-10.ucll.cloud
